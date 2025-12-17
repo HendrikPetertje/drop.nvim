@@ -96,6 +96,7 @@ function M.show()
     zindex = 10,
     style = "minimal",
     noautocmd = true,
+    border = "none",
   })
   vim.api.nvim_create_autocmd("VimResized", {
     callback = function()
@@ -109,6 +110,7 @@ function M.show()
         col = 0,
         width = vim.go.columns,
         height = vim.go.lines,
+        border = "none",
       })
     end,
   })
