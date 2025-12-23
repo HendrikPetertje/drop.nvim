@@ -114,7 +114,9 @@ function M.show()
       })
     end,
   })
-  vim.wo[M.win].winhighlight = "NormalFloat:Drop"
+  -- Force transparent background by setting Normal to a highlight group with no background
+  vim.api.nvim_set_hl(0, "DropNvimTransparent", { bg = "NONE" })
+  vim.wo[M.win].winhighlight = "NormalFloat:DropNvimTransparent,Normal:DropNvimTransparent"
   vim.wo[M.win].winblend = config.options.winblend
   M.ticks = 0
   M.timer = vim.loop.new_timer()
